@@ -31,7 +31,7 @@ class BoneDataSet(nn.Module):
 
         img = Image.open(img_path).convert('L').resize((224, 224),Image.ANTIALIAS)
         target = Image.open(target_path).convert('L').resize((224, 224),Image.ANTIALIAS)
-        img = np.asarray(img, dtype=np.float32).copy()
+        img = np.asarray(img, dtype=np.float32).copy() / 255
         target = np.asarray(target, dtype=np.float32).copy() / 255
 
         if int(angle) == 5:

@@ -57,13 +57,7 @@ class Discriminator(nn.Module):
             nn.AdaptiveAvgPool2d(1),
             )
         self.classifier = nn.Sequential(
-            nn.Linear(in_features=128, out_features=64),
-            nn.ReLU(),
-            nn.Dropout(p=0.5),
-            nn.Linear(in_features=64, out_features=64),
-            nn.ReLU(),
-            nn.Dropout(p=0.5),
-            nn.Linear(in_features=64, out_features=2),
+            nn.Linear(in_features=128, out_features=2),
         )
 
     def forward(self, x):
